@@ -152,17 +152,7 @@ ChartLocation calculatePoint(
       : y;
   x = valueToCoefficient(x.isInfinite ? 0 : x, xAxisRendererDetails);
   y = valueToCoefficient(
-      y != null
-          ? y.isInfinite
-              ? 0
-              : y < 0 &&
-                      yAxis is LogarithmicAxis &&
-                      (series is SplineSeries ||
-                          series is SplineAreaSeries ||
-                          series is SplineRangeAreaSeries)
-                  ? 0
-                  : y
-          : y,
+      y != null && y.isInfinite ? 0 : y,
       yAxisRendererDetails);
   final num xLength = isInverted ? rect.height : rect.width;
   final num yLength = isInverted ? rect.width : rect.height;
