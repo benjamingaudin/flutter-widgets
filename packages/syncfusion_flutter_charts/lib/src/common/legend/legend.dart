@@ -694,7 +694,7 @@ class ChartLegend {
 
     // ignore: prefer_if_null_operators
     cartesianShader = legendShader == null
-        ? !seriesType.contains('line') &&
+        ? !seriesType.contains('area') &&
                 (legendRenderContext.series is CartesianSeries &&
                     legendRenderContext.series.gradient != null &&
                     !legendRenderContext.isTrendline!)
